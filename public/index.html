@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Negocio de Pollos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1>Registro de Pollos</h1>
+  <form id="formPollo" method="POST" action="/pollos/nuevo">
+    <label>Peso: <input type="number" name="peso" required></label><br>
+    <label>Fecha de Nacimiento: <input type="date" name="fecha_nacimiento" required></label><br>
+    <label>Raza: <input type="text" name="raza" required></label><br>
+    <label>Estado de Salud:
+      <select name="estado_salud" required>
+        <option value="Saludable">Saludable</option>
+        <option value="Enfermo">Enfermo</option>
+        <option value="Recuperación">Recuperación</option>
+      </select>
+    </label><br>
+    <button type="submit">Registrar Pollo</button>
+  </form>
+
+  <h2>Pollos Registrados</h2>
+  <table id="tablaPollos">
+    <tr>
+      <th>Peso</th>
+      <th>Edad</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Raza</th>
+      <th>Estado de Salud</th>
+      <th>Acciones</th>
+    </tr>
+  </table>
+
+  <h1>Registro de Ventas</h1>
+  <form id="formularioVenta">
+    <label>Cliente: <input type="text" name="cliente" required></label><br>
+    <label>Cantidad: <input type="number" name="cantidad" required></label><br>
+    <label>Precio Total: <input type="number" name="precio_total" required></label><br>
+    <button type="submit">Registrar Venta</button>
+  </form>
+
+  <h2>Ventas Registradas</h2>
+  <table id="tablaVentas">
+    <tr>
+      <th>Cliente</th>
+      <th>Cantidad</th>
+      <th>Precio Total</th>
+      <th>Fecha de Venta</th>
+    </tr>
+  </table>
+
+  <script src="script.js"></script>
+  <script>
+    const formularioVenta = document.getElementById('formularioVenta');
+    formularioVenta.addEventListener('submit', registrarVenta);
+  </script>
+</body>
+</html>
